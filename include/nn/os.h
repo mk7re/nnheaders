@@ -42,7 +42,7 @@ struct InterProcessEventType {
 typedef u64 Tick;
 
 struct LightEventType {
-    std::aligned_storage_t<0xc, 4> storage;
+    alignas(4) std::byte storage[0xc];
 };
 
 struct EventType {
@@ -64,7 +64,7 @@ enum EventClearMode { EventClearMode_ManualClear, EventClearMode_AutoClear };
 struct ConditionVariableType {};
 
 struct SemaphoreType {
-    std::aligned_storage_t<0x28, 8> storage;
+    alignas(8) std::byte storage[0x28];
 };
 
 struct SystemEventType {
@@ -185,7 +185,7 @@ typedef union {
 /// Armv8 NEON register.
 
 typedef union {
-    u128 v;    ///< 128-bit vector view.
+    u64 v[2];  ///< 128-bit vector view.
     double d;  ///< 64-bit double-precision view.
     float s;   ///< 32-bit single-precision view.
 } FpuRegister;
