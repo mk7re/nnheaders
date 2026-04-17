@@ -6,14 +6,14 @@ namespace nn::hid {
 namespace CTR {
 
 struct Direction {
-    VEC3 x, y, z;
+    math::VEC3 x, y, z;
 };
 
 struct GyroscopeStatus {
     GyroscopeStatus();
 
-    VEC3 speed;
-    VEC3 angle;
+    math::VEC3 speed;
+    math::VEC3 angle;
     Direction direction;
 };
 
