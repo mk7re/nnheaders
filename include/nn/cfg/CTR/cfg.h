@@ -6,7 +6,7 @@ namespace nn {
 namespace cfg {
 namespace CTR {
 
-enum class CfgCountryCode {
+enum class CfgCountryCode : u8 {
     CFG_COUNTRY_JAPAN = 1,
     CFG_COUNTRY_ANGUILLA = 8,
     CFG_COUNTRY_ANTIGUA_AND_BARBUDA = 9,
@@ -142,7 +142,7 @@ enum class CfgCountryCode {
     CFG_COUNTRY_BERMUDA = 186
 };
 
-enum class CfgRegionCode {
+enum class CfgRegionCode : u8 {
     CFG_REGION_JAPAN,
     CFG_REGION_AMERICA,
     CFG_REGION_EUROPE,
@@ -154,13 +154,13 @@ enum class CfgRegionCode {
     CFG_REGION_MAX
 };
 
-enum class CfgLanguageCode {
+enum class CfgLanguageCode : u8 {
     CFG_LANGUAGE_JAPANESE,
     CFG_LANGUAGE_ENGLISH,
     CFG_LANGUAGE_FRENCH,
     CFG_LANGUAGE_GERMAN,
     CFG_LANGUAGE_ITALIAN,
-    CFG_LANGUAGE_SPANISH
+    CFG_LANGUAGE_SPANISH,
     CFG_LANGUAGE_SIMP_CHINESE,
     CFG_LANGUAGE_KOREAN,
     CFG_LANGUAGE_DUTCH,
