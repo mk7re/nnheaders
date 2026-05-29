@@ -60,7 +60,7 @@ struct Config {
     s32 darkenTopScreen;
     EFilterFlags filterFlags;
     u32 saveStateFlags;
-    u16 maxTextLength
+    u16 maxTextLength;
     u16 dictWordCount;
     u16 maxDigits;
     u16 buttonText[3][17];
@@ -87,8 +87,8 @@ struct Config {
     s32 unk_0x138;
     s32 unk_0x13c;
     s32 unk_0x140;
-    s32 unk_0x144;
-    s16 unk_0x148;
+    wchar_t* unk_0x144;
+    u16 unk_0x148;
     s16 unk_0x14a;
     ECallbackResult callbackResult;
     u16 callbackMessage[257];
@@ -104,11 +104,13 @@ struct UserWord {
 
 };
 
-typedef AppTextCheckResult (*AppTextCheckCallback)(const wchar_t**, const wchar_t*, u16);
+typedef ECallbackResult (*AppTextCheckCallback)(const wchar_t**, const wchar_t*, u16);
+
+AppTextCheckResult AppTextCheckResultFuncPtr;
 
 bool SetInputData(Config*, void*, u32, const wchar_t*, const UserWord*, const void*, const void*);
 void InitializeConfig(Config*);
-u32 CTR::GetSharedMemorySize(const Config*, const void*, const void*);
+u32 GetSharedMemorySize(const Config*, const void*, const void*);
 bool StartKeyboardApplet(nn::applet::CTR::WakeupState*, Parameter*, void*, u32, const wchar_t*, const UserWord*, const void*, const void*, AppTextCheckResult);
 
 }  // namespace nn::swkbd::CTR
