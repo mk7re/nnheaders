@@ -2,9 +2,8 @@
 
 #include <nn/types.h>
 
-namespace nn {
-namespace cfg {
-namespace CTR {
+namespace nn::cfg::CTR
+{
 
 enum class CfgCountryCode : u8 {
     CFG_COUNTRY_JAPAN = 1,
@@ -180,6 +179,4 @@ u64 GetLocalFriendCode();
 bool IsRestrictAddFriend();
 CfgRegionCode GetRegion();
 
-}
-}
 }

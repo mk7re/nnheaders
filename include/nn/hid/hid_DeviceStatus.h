@@ -3,8 +3,7 @@
 #include "../math/VEC.h"
 #include <nn/types.h>
 
-namespace nn::hid {
-namespace CTR {
+namespace nn::hid::CTR {
 
 struct Direction {
     math::VEC3 x, y, z;
@@ -26,7 +25,5 @@ struct PadReader {
     };
 
     u8 field_0x00[0x38];
-};
-
 };
 };
