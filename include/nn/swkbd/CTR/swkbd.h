@@ -104,7 +104,8 @@ struct UserWord {
 
 };
 
-typedef ECallbackResult (*AppTextCheckCallback)(const wchar_t**, const wchar_t*, u16);
+typedef Config::ECallbackResult (*AppTextCheckCallback)(const wchar_t**, const wchar_t*, u16);
+typedef AppTextCheckCallback AppTextCheckResult;
 
 AppTextCheckResult AppTextCheckResultFuncPtr;
 
