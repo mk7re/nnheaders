@@ -2,6 +2,12 @@
 
 #include <nn/types.h>
 
+namespace nw::snd::internal
+{
+// Forward declaration
+class BasicSound;
+}
+
 namespace nw::snd
 {
 
@@ -13,6 +19,14 @@ enum class PanMode : u8
 enum class PanCurve : u8
 {
 
+};
+
+class SoundHandle {
+    void DetachSound();
+    void detail_AttachSound(internal::BasicSound *);
+    void detail_AttachSoundAsTempHandle(internal::BasicSound *);
+
+    internal::BasicSound *basicSound;
 };
 
 }
