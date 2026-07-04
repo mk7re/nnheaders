@@ -2,8 +2,9 @@
 
 #include <nn/types.h>
 
-namespace nn::cfg::CTR
-{
+namespace nn {
+namespace cfg {
+namespace CTR {
 
 enum class CfgCountryCode : u8 {
     CFG_COUNTRY_JAPAN = 1,
@@ -179,4 +180,24 @@ u64 GetLocalFriendCode();
 bool IsRestrictAddFriend();
 CfgRegionCode GetRegion();
 
-}
+struct SimpleAddress {
+    u32 id;
+    u16 countryName[16][64];
+    u16 regionName[16][64];
+    u16 latitude;
+    u16 longitude;
+};
+
+void GetSimpleAddress(SimpleAddress *);
+
+struct UserName {
+    u16 userName[11];   // 0x00
+    bool isNgUserName;  // 0x16
+    u8 unk_0x17[5];
+};
+
+void GetUserName(UserName *);
+
+} // namespace CTR
+} // namespace cfg
+} // namespace nn
