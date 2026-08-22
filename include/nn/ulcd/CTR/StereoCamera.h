@@ -2,6 +2,7 @@
 
 #include "../../types.h"
 #include "../../math/VEC.h"
+#include "../../math/MTX.h"
 
 namespace nn::ulcd::CTR {
 
@@ -19,6 +20,11 @@ public:
         math::Vector3 upDir;
         math::Vector3 targetDir;
     };
+
+    StereoCamera();
+    f32 GetParallax(f32) const;
+    void Initialize();
+    void CalculateMatrices(math::MTX44*, math::MTX34*, math::MTX44*, math::MTX34*, const math::MTX44*, const math::MTX34*, f32, f32, bool);
 
     CameraInfo m_BaseCamera;
     f32 m_LimitParallax;
