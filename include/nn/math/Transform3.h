@@ -1,6 +1,6 @@
 #pragma once
 
-#include "VEC3.h"
+#include "VEC.h"
 
 namespace nn::math {
 
